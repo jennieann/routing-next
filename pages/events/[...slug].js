@@ -3,11 +3,19 @@ import ResultsTitle from '../../components/Events/ResultsTitle';
 import Button from '../../components/ui/Button';
 import ErrorAlert from '../../components/ui/ErrorAlert';
 import { getFilteredEvents } from '../../helpers/api-utils';
+import Head from 'next/head';
 
 const FilterEvents = ({ events, date }) => {
+  const head = (
+    <Head>
+      <title>Search recipes</title>
+      <meta name="description" content="my favorite recipes in one place" />
+    </Head>
+  );
   if (!events || events.length === 0) {
     return (
       <>
+        {head}
         <ErrorAlert>
           <p>No events found for the chosen filter</p>
         </ErrorAlert>
@@ -22,6 +30,7 @@ const FilterEvents = ({ events, date }) => {
 
   return (
     <div>
+      {head}
       <ResultsTitle date={eventDate} />
       <EventList cookingEvents={events} />
     </div>

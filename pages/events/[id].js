@@ -1,11 +1,10 @@
-import Link from 'next/link';
-import { useRouter } from 'next/router';
 import { getEventById, getAllEvents } from '../../helpers/api-utils';
 import EventSummary from '../../components/EventDetail/EventSummary';
 import EventLogistics from '../../components/EventDetail/EventLogistics';
 import EventContent from '../../components/EventDetail/eventContent';
 import ErrorAlert from '../../components/ui/ErrorAlert';
-import { PageNotFoundError } from 'next/dist/shared/lib/utils';
+import Head from 'next/head';
+
 const EventDetails = ({ event }) => {
   if (!event) {
     return (
@@ -17,6 +16,10 @@ const EventDetails = ({ event }) => {
 
   return (
     <>
+      <Head>
+        <title>{event.title}</title>
+        <meta name="description" content="my favorite recipes in one place" />
+      </Head>
       <EventSummary title={event.title} />
       <EventLogistics
         date={event.date}
