@@ -22,7 +22,7 @@ const EventItem = (props) => {
   const eventLink = `/events/${id}`;
   return (
     <li key={id} className={styles.item}>
-      <Image
+      <img
         priority="1"
         src={'/' + image}
         alt={title}
@@ -30,6 +30,7 @@ const EventItem = (props) => {
         height={200}
         width={200}
       />
+
       <div className={styles.content}>
         <h2>{title}</h2>
         <div className={styles.date}>

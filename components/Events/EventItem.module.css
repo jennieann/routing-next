@@ -10,10 +10,9 @@ gap: 1rem;
 
 
 }
-.image {
-  width: 100%;
+.item .image {
   object-fit: cover;
-  height: 10rem;
+  width: 100%;
 }
 
 .content {
@@ -74,6 +73,9 @@ gap: 1rem;
 
 
 @media (min-width: 768px) {
+  .item .image{
+    width: 50%;
+  }
   .item {
     flex-direction: row;
   }
