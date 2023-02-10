@@ -3,6 +3,7 @@ import EventSummary from '../../components/EventDetail/EventSummary';
 import EventLogistics from '../../components/EventDetail/EventLogistics';
 import EventContent from '../../components/EventDetail/eventContent';
 import ErrorAlert from '../../components/ui/ErrorAlert';
+import Comments from '../../components/Input/Comments';
 import Head from 'next/head';
 
 const EventDetails = ({ event }) => {
@@ -30,6 +31,7 @@ const EventDetails = ({ event }) => {
       <EventContent>
         <p>{event.description}</p>
       </EventContent>
+      <Comments eventId={event.id} />
     </>
   );
 };
