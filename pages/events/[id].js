@@ -54,6 +54,7 @@ export const getStaticProps = async (context) => {
   const eventID = params.id;
 
   const event = await getEventById(eventID);
+  console.log('Event', event);
 
   if (!event) {
     return { notFound: true };
